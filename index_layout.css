@@ -1,3 +1,26 @@
-//
-Page layout for the index page
-//
+/*
+Page layout for index.html
+Author: NaDari Cole
+Date:12/30/2025
+Code Type: css
+Filename: index_layout.css
+*/
+
+
+.logo-img {
+  /* Logo Size */
+  width: 100px; 
+  height: auto;
+
+  /* Logo Position */
+  position: absolute;
+  top: 6;
+  left: 9;
+  margin: 10px; /* For Spacing */
+}
+
+/* Ensure the header acts as the positioning for the logo */
+header {
+  position: relative;
+/* I can add other header styles (e.g. height, background color, paddding) */
+}
