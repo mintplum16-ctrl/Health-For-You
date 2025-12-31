@@ -34,13 +34,11 @@ header.header {
 .logo {
     display: flex;
     align-items: center;
-    background-color: transparent; /* Ensures logo transparency works */
 }
 
 .logo img {
     height: 150px; /* logo size */
     width: auto;
-    background: transparent; /* Extra safety for transparency */
     display: block;
 }
 
