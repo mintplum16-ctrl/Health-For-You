@@ -73,29 +73,6 @@ header.header {
     color: #ffac93; /* Your custom light pink hover */
 }
 
-/* Main content */
-article {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 0 20px 100px; /* Extra bottom padding for breathing room after last paragraph */
-    text-align: left;
-    line-height: 1.6;
-}
-
-article h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-article p {
-    margin-bottom: 25px;
-}
-
-/* Footer space */
-footer {
-    height: 50px; /* Extra buffer at the very bottom */
-}
-
 /* MINIMALIST SEARCH BAR */
 .search-bar-container {
     position: relative;
@@ -163,10 +140,10 @@ footer {
     transform: translateY(-50%) rotate(90deg) scale(1.1);
 }
 
-/* ====================== UPDATED HERO SECTION ====================== */
+/* UPDATED HERO SECTION */
 .hero {
     position: relative;
-    height: 70vh;                  /* Smaller hero height */
+    height: 70vh; /* Smaller hero height */
     min-height: 500px;
     overflow: hidden;
 }
@@ -188,19 +165,19 @@ footer {
 
 .hero-content {
     position: absolute;
-    right: 0;                      /* Flush to right edge */
+    right: 0; /* Flush to right edge */
     top: 50%;
     transform: translateY(-50%);
-    width: 380px;                  /* Keep smaller width */
-    height: 420px;                 /* Keep smaller height */
-    background-color: hsl(44, 100%, 98%);     /* Grey rectangle – change hex if you want lighter/darker */
+    width: 380px; /* Keep smaller width */
+    height: 420px; /* Keep smaller height */
+    background-color: hsl(44, 100%, 98%); /* Matches your beige body bg */
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 2;
-    box-shadow: -10px 0 30px rgba(255, 172, 147);
-    border-radius: 40px 0 0 40px;   /* NEW: Rounded corners on the left side only (top-left and bottom-left) */
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    border-radius: 40px 0 0 40px; /* Rounded on left side */
 }
 
 .hero-content h1 {
@@ -240,9 +217,28 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Main content adjustments */
+/* Main content adjustments – nicer paragraph styling */
 .main-content {
     padding: 60px 20px;
     max-width: 900px;
     margin: 0 auto;
+}
+
+.content-wrapper h2 {
+    font-size: 28px;
+    color: #a2b850; /* Green accent for headings */
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.content-wrapper p {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Footer space */
+footer {
+    height: 50px; /* Extra buffer at the very bottom */
 }
