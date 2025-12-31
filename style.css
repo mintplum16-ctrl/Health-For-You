@@ -163,14 +163,12 @@ footer {
     transform: translateY(-50%) rotate(90deg) scale(1.1);
 }
 
-/*  HERO SECTION  */
+/* ====================== UPDATED HERO SECTION ====================== */
 .hero {
     position: relative;
-    height: 80vh;                  /* Full height hero – adjust as needed */
-    min-height: 600px;
+    height: 70vh;                  /* Smaller hero height */
+    min-height: 500px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
 }
 
 .hero-image {
@@ -185,71 +183,65 @@ footer {
 .hero-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;             /* Covers the area nicely */
+    object-fit: cover;
 }
 
 .hero-content {
-    position: relative;
+    position: absolute;
+    right: 0;                      /* Attached to right edge */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;                  /* Smaller rectangle width */
+    height: 420px;                 /* Smaller height */
+    background-color: #e0e0e0;     /* Grey rectangle */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     z-index: 2;
-    max-width: 600px;
-    margin-left: auto;             /* Pushes to the right */
-    margin-right: 10%;             /* Space from right edge */
-    padding: 60px 50px;
-    background-color: hsl(44, 100%, 98%); /* Matches your body bg – light beige */
-    border-radius: 50px 0 0 50px; /* Rounded on left side for that "overlay" look */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2); /* Shadow on left for depth */
 }
 
 .hero-content h1 {
-    font-size: 42px;
+    font-size: 36px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     line-height: 1.2;
 }
 
 .hero-content h1 span {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: normal;
     display: block;
     color: #555;
 }
 
 .hero-content p {
-    font-size: 18px;
+    font-size: 17px;
     color: #666;
-    margin-bottom: 40px;
-    line-height: 1.6;
+    margin-bottom: 30px;
+    line-height: 1.5;
 }
 
 .hero-btn {
-    display: inline-block;
-    background-color: #a2b850;     /* Your header green */
+    align-self: start;
+    background-color: #a2b850;
     color: #fff;
-    padding: 14px 32px;
+    padding: 12px 28px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 18px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(162, 184, 80, 0.3);
 }
 
 .hero-btn:hover {
     background-color: #8fa046;
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(162, 184, 80, 0.4);
 }
 
-/* Main content below hero */
+/* Main content adjustments */
 .main-content {
-    padding: 80px 20px;
+    padding: 60px 20px;
     max-width: 900px;
     margin: 0 auto;
-}
-
-.content-wrapper p {
-    margin-bottom: 30px;
-    font-size: 17px;
-    line-height: 1.7;
-    color: #444;
 }
