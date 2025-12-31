@@ -62,22 +62,6 @@ header.header {
     color: #a0f1ea;  /* Light teal hover, like example accent */
 }
 
-/* Book a Demo button – matches orange rounded style */
-.book-demo {
-    background-color: #ff643b;  /* Orange to match example */
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 25px;
-    border-radius: 30px;  /* Rounded pill */
-    transition: background-color 0.3s;
-}
-
-.book-demo:hover {
-    background-color: #ff855f;  /* Lighter orange on hover */
-}
-
 /* Optional: Style for article to match screenshot layout */
 article {
     max-width: 800px;  /* Narrow for readability */
