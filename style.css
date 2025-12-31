@@ -3,65 +3,65 @@ Page layout for index.html
 Author: NaDari Cole
 Date: 12/30/2025
 Code Type: css
-Filename: style.css  // Renamed to match your HTML link
+Filename: style.css
 */
 
-@charset "utf-8";  /* Fixed: Added @ */
+@charset "utf-8";
 
-* {  /* Added universal selector */
+* {
     margin: 0;
     padding: 0;
     font-family: "Nunito", sans-serif;
 }
 
 body {
-    background: hsl(44, 100%, 98%);  /* Light beige */
+    background: hsl(44, 100%, 98%); /* Light beige */
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    min-height: 100vh; /* Changed to min-height so content can expand beyond viewport if needed */
     position: relative;
 }
 
 /* Header/Navigation */
 header.header {
-    background-color: #a2b850;  /* Green background */
-    padding: 15px 50px 15px 0;  /* Top, right, bottom padding; NO left padding */
+    background-color: #a2b850; /* Green background */
+    padding: 25px 50px 25px 0; /* Increased top/bottom to 25px for taller "box" (adds ~20px total height) */
     display: flex;
     align-items: center;
-    justify-content: space-between;  /* Keeps nav centered-ish, button right */
+    justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
-    position: relative;  /* Needed for absolute positioning of logo */
+    position: relative;
 }
 
 .logo {
-    position: absolute;     /* Takes logo out of normal flow */
-    left: 0;                /* Sticks it to the left edge */
-    top: 0;                 /* Sticks it to the top */
-    bottom: 0;              /* Stretches to bottom */
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
     display: flex;
-    align-items: center;    /* Vertically centers the image */
-    background-color: ##a2b850;  /* Dark background behind logo (in case of transparency gaps) */
-    padding-left: 20px;     /* Optional: small space from very edge – adjust or set to 0 */
+    align-items: center;
+    background-color: #a2b850; /* Fixed typo (removed extra #) – now matches header green */
+    padding-left: 10px; /* Reduced for less gap; set to 0 if you want fully flush */
 }
 
 .logo img {
-    height: 130px;  /* Larger size – adjust this number to match the red square */
-    width: auto;   /* Keeps proportions */
-    max-height: 170%; /* Ensures it doesn't overflow header height */
+    height: 100px; /* Larger size – adjust to 110px or 120px if too small; this should fit your "red square" intent */
+    width: auto;
+    max-height: 100%; /* Prevents overflow */
 }
 
-/* Rest of nav stays the same – white links with hover */
+/* Nav links */
 .nav-area {
     list-style: none;
-    margin: 0 auto;  /* Centers the nav links horizontally */
+    margin: 0 auto;
     padding: 0;
     display: flex;
     align-items: center;
 }
 
 .nav-area li {
-    margin: 0 20px;  /* Slightly more space between links */
+    margin: 0 20px;
 }
 
 .nav-area li a {
@@ -74,14 +74,14 @@ header.header {
 }
 
 .nav-area li a:hover {
-    color: #ffac93;  /* Light pink hover */
+    color: #ffac93; /* Your custom light pink hover */
 }
 
-/* Style for article */
+/* Article styling with bottom space */
 article {
-    max-width: 800px;  /* Narrow for readability */
-    margin: 50px auto;  /* Center with top/bottom space */
-    padding: 0 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px 80px; /* Added 80px bottom padding for empty space after last paragraph – adjust as needed */
     text-align: left;
     line-height: 1.6;
 }
@@ -93,4 +93,9 @@ article h2 {
 
 article p {
     margin-bottom: 25px;
+}
+
+/* Optional: Style for empty footer (adds more bottom space if needed) */
+footer {
+    height: 50px; /* Extra buffer at very bottom */
 }
