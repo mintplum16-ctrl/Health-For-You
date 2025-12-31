@@ -24,33 +24,48 @@ body {
 
 /* Header/Navigation */
 header.header {
-    background-color: #0f172a;  /* Dark navy */
-    padding: 15px 50px;
+    background-color: #0f172a;  /* Dark navy background */
+    padding: 15px 50px 15px 0;  /* Top, right, bottom padding; NO left padding */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;  /* Keeps nav centered-ish, button right */
     width: 100%;
     box-sizing: border-box;
+    position: relative;  /* Needed for absolute positioning of logo */
+}
+
+.logo {
+    position: absolute;     /* Takes logo out of normal flow */
+    left: 0;                /* Sticks it to the left edge */
+    top: 0;                 /* Sticks it to the top */
+    bottom: 0;              /* Stretches to bottom */
+    display: flex;
+    align-items: center;    /* Vertically centers the image */
+    background-color: #0f172a;  /* Dark background behind logo (in case of transparency gaps) */
+    padding-left: 20px;     /* Optional: small space from very edge – adjust or set to 0 */
 }
 
 .logo img {
-    height: 40px;  /* Adjust as needed */
+    height: 80px;  /* Larger size – adjust this number to match the red square in your drawing */
+    width: auto;   /* Keeps proportions */
+    max-height: 100%; /* Ensures it doesn't overflow header height */
 }
 
+/* Rest of nav stays the same – white links with teal hover */
 .nav-area {
     list-style: none;
-    margin: 0;
+    margin: 0 auto;  /* Centers the nav links horizontally */
     padding: 0;
     display: flex;
     align-items: center;
 }
 
 .nav-area li {
-    margin: 0 15px;
+    margin: 0 20px;  /* Slightly more space between links */
 }
 
 .nav-area li a {
-    color: #fff;  /* White text to match example */
+    color: #fff;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -59,7 +74,7 @@ header.header {
 }
 
 .nav-area li a:hover {
-    color: #a0f1ea;  /* Light teal hover, like example accent */
+    color: #a0f1ea;  /* Light teal hover */
 }
 
 /* Optional: Style for article to match screenshot layout */
