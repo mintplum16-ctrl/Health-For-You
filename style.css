@@ -23,7 +23,7 @@ body {
 
 /* Header/Navigation */
 header.header {
-    background-color: #a2b850; /* Your custom green */
+    background-color: #a2b850; /* green */
     padding: 25px 50px; /* Equal padding left/right, taller header */
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@ header.header {
 }
 
 .logo img {
-    height: 150px; /* Your current logo size */
+    height: 150px; /* logo size */
     width: auto;
     background: transparent; /* Extra safety for transparency */
     display: block;
@@ -73,7 +73,7 @@ header.header {
 }
 
 .nav-area li a:hover {
-    color: #ffac93; /* Your custom light pink/orange hover */
+    color: #ffac93; /* light pink/orange hover */
 }
 
 /* MINIMALIST SEARCH BAR */
@@ -220,7 +220,7 @@ header.header {
     transform: translateY(-3px);
 }
 
-/* MAIN CONTENT – Nicely styled paragraphs with headings */
+/* MAIN CONTENT – styled paragraphs with headings */
 .main-content {
     padding: 60px 20px;
     max-width: 900px;
