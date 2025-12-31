@@ -94,7 +94,104 @@ article p {
     margin-bottom: 25px;
 }
 
-/* Optional footer space */
+/* footer space */
 footer {
-    height: 50px; /* Extra buffer at the very bottom if needed */
+    height: 50px; /* Extra buffer at the very bottom */
+}
+
+/* SEARCH BAR  */
+.search-wrapper {
+    margin-left: 30px; /* Space from the News link */
+}
+
+.search-container {
+    position: relative;
+    height: 50px;
+    width: 50px;                    /* Starts as round icon */
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);    /* Cool glass effect */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Super smooth elastic animation */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-container.active {
+    width: 300px;                   /* Expanded width – change if I want it longer/shorter */
+    border-radius: 50px;            /* Keeps rounded when expanded */
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.search-toggle {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.search-toggle:hover {
+    transform: translateY(-50%) scale(1.15);
+}
+
+.search-input {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 80px);
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.2s;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.search-container.active .search-input {
+    opacity: 1;
+}
+
+.search-close {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+.search-container.active .search-close {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.search-close:hover {
+    transform: translateY(-50%) rotate(90deg) scale(1.2);
+    color: #ffac93; /* Matches your nav hover color */
 }
