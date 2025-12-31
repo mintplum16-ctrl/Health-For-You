@@ -41,17 +41,17 @@ header.header {
     bottom: 0;              /* Stretches to bottom */
     display: flex;
     align-items: center;    /* Vertically centers the image */
-    background-color: #0f172a;  /* Dark background behind logo (in case of transparency gaps) */
+    background-color: ##a2b850;  /* Dark background behind logo (in case of transparency gaps) */
     padding-left: 20px;     /* Optional: small space from very edge – adjust or set to 0 */
 }
 
 .logo img {
-    height: 100px;  /* Larger size – adjust this number to match the red square */
+    height: 130px;  /* Larger size – adjust this number to match the red square */
     width: auto;   /* Keeps proportions */
-    max-height: 150%; /* Ensures it doesn't overflow header height */
+    max-height: 170%; /* Ensures it doesn't overflow header height */
 }
 
-/* Rest of nav stays the same – white links with teal hover */
+/* Rest of nav stays the same – white links with hover */
 .nav-area {
     list-style: none;
     margin: 0 auto;  /* Centers the nav links horizontally */
