@@ -247,10 +247,10 @@ footer {
 }
 
 .footer-bg {
-    background-color: #a2b850; /* Your nav green */
+    background-color: #a2b850; /* green */
     padding: 40px 20px;
     text-align: center;
-    border-radius: 20px 20px 0 0; /* Optional: subtle rounded top corners for softness */
+    border-radius: 20px 20px 0 0; /* rounded top corners for softness */
     max-width: 1200px;
     margin: 0 auto; /* Centers the strip if screen is wide */
 }
