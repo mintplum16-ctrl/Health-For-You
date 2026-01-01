@@ -1,10 +1,10 @@
 // This file is for the index.html files search bar
 
-// For index.html search bar
+// For conditions.html
 //Author: NaDari Cole
 //Date: 12/31/2025
 //Code Type: js
-//Filename: script.js
+//Filename: scripts.js
 
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.querySelector('.search-input');
