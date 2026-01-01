@@ -1,5 +1,11 @@
 // This file is for the index.html files search bar
 
+//Page layout for index.html
+//Author: NaDari Cole
+//Date: 12/31/2025
+//Code Type: js
+//Filename: script.js
+
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.querySelector('.search-input');
     const searchClear = document.querySelector('.search-clear');
