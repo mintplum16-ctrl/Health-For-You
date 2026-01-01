@@ -242,5 +242,26 @@ header.header {
 
 /* Footer */
 footer {
-    height: 40px;
+    background-color: hsl(44, 100%, 98%); /* Matches your light beige body background */
+    color: #444; /* Darker text for better readability on beige */
+    text-align: center;
+    padding: 50px 20px; /* More vertical padding for breathing room */
+    font-size: 16px;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Perfect horizontal centering */
+    justify-content: center; /* Perfect vertical centering */
+    min-height: 120px;       /* Gives consistent height */
+}
+
+.footer-content p {
+    margin: 8px 0;
+    max-width: 800px; /* Prevents text from stretching too wide on large screens */
+}
+
+.footer-content p:first-child {
+    font-weight: 600;
+    font-size: 17px;
+    color: #333;
 }
