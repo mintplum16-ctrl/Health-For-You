@@ -39,6 +39,7 @@ header.header {
 .logo img {
     height: 150px; /* logo size */
     width: auto;
+    margin-left: auto;
     display: block;
 }
 
