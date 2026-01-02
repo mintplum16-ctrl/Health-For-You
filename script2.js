@@ -49,19 +49,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Article Search Functionality
-const articleSearchInput = document.getElementById('article-search-input');
-const articleCards = document.querySelectorAll('.article-card');
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('article-search-input');
+    const cards = document.querySelectorAll('.article-card');
 
-articleSearchInput.addEventListener('input', function () {
-    const searchTerm = this.value.toLowerCase();
-    articleCards.forEach(card => {
-        const title = card.querySelector('.article-title').textContent.toLowerCase();
-        const excerpt = card.querySelector('.article-excerpt').textContent.toLowerCase();
-        if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
+    searchInput.addEventListener('input', () => {
+        const term = searchInput.value.toLowerCase();
+        cards.forEach(card => {
+            const title = card.querySelector('.article-title').textContent.toLowerCase();
+            const excerpt = card.querySelector('.article-excerpt').textContent.toLowerCase();
+            const category = card.querySelector('.category-tag')?.textContent.toLowerCase() || '';
+            const matches = title.includes(term) || excerpt.includes(term) || category.includes(term);
+            card.classList.toggle('hidden', !matches);
+        });
     });
 });
+
