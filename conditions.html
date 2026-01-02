@@ -1,18 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!--
-    This website was made by NaDari Cole. Please don't copy my code completly.
-    I will allow bits of my code to be copyed :).
-    Name: NaDari Cole
-    Date: 12/31/2025
-    Code Type: HTML5
-    Filename: index.html
-    Website Name: Health For You
-    -->
     <meta charset="utf-8">
-    <meta name="keywords" content="Health, Men, Women, Help, Real, Body" />
-    <title>Health For You</title>
+    <meta name="keywords" content="Health, Conditions, Natural Remedies, Wellness" />
+    <title>Conditions | Health For You</title>
     <link rel="stylesheet" href="style2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,11 +14,11 @@
         <div class="logo">
             <img src="images/HealthForYou_Logo.png" alt="Health For You Logo">
         </div>
-       
+      
         <div class="nav-center">
             <ul class="nav-area">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="./" class="active">Conditions</a></li>
+                <li><a href="conditions.html" class="active">Conditions</a></li>
                 <li><a href="recipes.html">Recipes</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="library.html">Library</a></li>
@@ -35,74 +26,106 @@
                 <li><a href="news.html">News</a></li>
             </ul>
         </div>
-        <!-- Minimalist Search Bar -->
         <div class="search-bar-container">
             <span class="search-icon">🔍</span>
             <input type="search" class="search-input" placeholder="What is your curiosity?" aria-label="Search site">
             <button class="search-clear" aria-label="Clear search">✕</button>
         </div>
     </header>
-    <!-- New Hero Section -->
+
+    <!-- Hero Section (same as homepage) -->
     <section class="hero">
         <div class="hero-image">
-            <img src="images/hero-bg.jpg" alt="Serene wellness scene with plants, candles, and natural light">
+            <img src="images/hero-bg.jpg" alt="Serene wellness scene">
         </div>
         <div class="hero-content">
             <h1>Common Conditions<br>
             <span>Gentle, natural approaches to feel better every day.</span></h1>
-            <p>Explore practical, evidence-informed ways to support your body through everyday health concerns or even serious ones.</p>
+            <p>Explore practical, evidence-informed ways to support your body through everyday health concerns — from stress and low energy to digestion, sleep, immunity, and more. No extremes, just small, sustainable steps rooted in nature and tradition.</p>
             <a href="#main-content" class="hero-btn">Discover Support</a>
         </div>
-        <!-- Article Search Bar -->
-    <section class="article-search">
-        <input type="text" id="article-search-input" placeholder="Search for a condition or symptom..." aria-label="Search articles">
     </section>
 
-    <!-- Articles Grid -->
-    <section class="articles" id="main-content">
-        <div class="article-grid">
-            <!-- Article Card 1 -->
-            <div class="article-card">
-                <div class="article-title">Stress & Anxiety Relief</div>
-                <div class="article-excerpt">Natural ways to calm your mind and reduce daily stress...</div>
-            </div>
-            <!-- Article Card 2 -->
-            <div class="article-card">
-                <div class="article-title">Digestive Health</div>
-                <div class="article-excerpt">Gentle remedies for better digestion and gut balance...</div>
-            </div>
-            <!-- Article Card 3 -->
-            <div class="article-card">
-                <div class="article-title">Better Sleep</div>
-                <div class="article-excerpt">Herbal tips and routines for restful nights...</div>
-            </div>
-            <!-- Article Card 4 -->
-            <div class="article-card">
-                <div class="article-title">Immune Support</div>
-                <div class="article-excerpt">Boost your body's defenses naturally...</div>
-            </div>
-            <!-- Article Card 5 -->
-            <div class="article-card">
-                <div class="article-title">Energy & Fatigue</div>
-                <div class="article-excerpt">Sustainable ways to lift low energy levels...</div>
-            </div>
-            <!-- Article Card 6 -->
-            <div class="article-card">
-                <div class="article-title">Hormonal Balance</div>
-                <div class="article-excerpt">Natural support for hormonal health...</div>
+    <!-- Page Search Bar -->
+    <section class="page-search-section">
+        <div class="container">
+            <input type="text" id="article-search-input" placeholder="Search conditions, symptoms, or remedies..." aria-label="Search articles">
+        </div>
+    </section>
+
+    <!-- Articles Masonry Grid -->
+    <section class="articles-masonry" id="main-content">
+        <div class="container">
+            <div class="masonry-grid">
+                <!-- Featured Large Card -->
+                <article class="article-card large">
+                    <div class="article-image">
+                        <img src="images/condition-featured.jpg" alt="Stress relief">
+                        <span class="category-tag">Featured</span>
+                    </div>
+                    <div class="article-meta">
+                        <span class="date">Jan 1, 2026</span>
+                        <span class="read-time">8 min read</span>
+                    </div>
+                    <h3 class="article-title">Natural Support for Daily Stress & Anxiety</h3>
+                    <p class="article-excerpt">Discover gentle, plant-based tools and daily habits to calm your mind and restore balance — no overwhelm, just real relief.</p>
+                    <p class="author">NaDari Cole</p>
+                </article>
+
+                <!-- Regular Cards -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/condition1.jpg" alt="Digestion">
+                        <span class="category-tag">Digestion</span>
+                    </div>
+                    <div class="article-meta">
+                        <span class="date">Dec 28, 2025</span>
+                        <span class="read-time">6 min read</span>
+                    </div>
+                    <h3 class="article-title">Healing Your Gut Naturally</h3>
+                    <p class="article-excerpt">Simple herbs, foods, and habits to soothe bloating, improve digestion, and support long-term gut health.</p>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/condition2.jpg" alt="Sleep">
+                        <span class="category-tag">Sleep</span>
+                    </div>
+                    <div class="article-meta">
+                        <span class="date">Dec 25, 2025</span>
+                        <span class="read-time">7 min read</span>
+                    </div>
+                    <h3 class="article-title">Fall Asleep Faster with Herbal Rituals</h3>
+                    <p class="article-excerpt">Calming teas, aromatherapy, and bedtime routines to help you drift off naturally and wake refreshed.</p>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/condition3.jpg" alt="Immunity">
+                        <span class="category-tag">Immunity</span>
+                    </div>
+                    <div class="article-meta">
+                        <span class="date">Dec 20, 2025</span>
+                        <span class="read-time">5 min read</span>
+                    </div>
+                    <h3 class="article-title">Boost Your Immune System This Season</h3>
+                    <p class="article-excerpt">Everyday foods and herbs to strengthen your body's natural defenses — gently and effectively.</p>
+                </article>
+
+                <!-- Add more cards as needed -->
             </div>
         </div>
     </section>
 
     <footer>
-        <!-- Your footer content -->
+        <div class="footer-bg">
+            <div class="footer-content">
+                <p>© 2025 Health For You • Made with 🌿 and good vibes by NaDari Cole</p>
+                <p>Feel better naturally, one small step at a time. 💛</p>
+            </div>
+        </div>
     </footer>
-    </section>
-     <script src="script2.js"></script>
-    <!-- Back to Top Button -->
-   <button id="back-to-top" aria-label="Back to top">
-    ↑
-</button>
-    
+
+    <script src="script2.js"></script>
 </body>
 </html>
