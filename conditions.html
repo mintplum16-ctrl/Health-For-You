@@ -5,15 +5,15 @@
     This website was made by NaDari Cole. Please don't copy my code completly.
     I will allow bits of my code to be copyed :).
     Name: NaDari Cole
-    Date: 12/32/2025
+    Date: 01/03/2026
     Code Type: HTML5
     Filename: conditions.html
     Website Name: Health For You
     -->
     <meta charset="utf-8">
     <meta name="keywords" content="Health, Men, Women, Help, Real, Body" />
-    <title>Conditions</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Conditions | Health For You</title>
+    <link rel="stylesheet" href="style2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
@@ -23,11 +23,11 @@
         <div class="logo">
             <img src="images/HealthForYou_Logo.png" alt="Health For You Logo">
         </div>
-       
+      
         <div class="nav-center">
             <ul class="nav-area">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="./" class="active">Conditions</a></li>
+                <li><a href="conditions.html" class="active">Conditions</a></li>
                 <li><a href="recipes.html">Recipes</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="library.html">Library</a></li>
@@ -45,7 +45,7 @@
     <!-- New Hero Section -->
     <section class="hero">
         <div class="hero-image">
-            <img src="images/hero2-bg.jpg" alt="Hospital Room">
+            <img src="images/hero2-bg.jpg" alt="Hospital Room"> <!-- This is the image for the hero background on the conditions page -->
         </div>
         <div class="hero-content">
             <h1>Conditions<br>
@@ -53,19 +53,110 @@
             <p>Find articles that relate to you..</p>
         </div>
     </section>
-   
-    <footer>
-    <div class="footer-bg">
-        <div class="footer-content">
-            <p>© 2025 Health For You • Made with 🌿 and good vibes by NaDari Cole</p>
-            <p>Feel better naturally, one small step at a time. 💛</p>
+
+    <!-- Page Search Bar – this searches only the articles on this page -->
+    <section class="page-search-section">
+        <div class="container">
+            <input type="text" id="article-search-input" placeholder="Search conditions, symptoms, or remedies..." aria-label="Search articles on this page">
+        </div>
+    </section>
+
+    <!-- Articles Grid – 3 per row, 6 total (2 rows) -->
+    <section class="articles-section" id="main-content">
+        <div class="container">
+            <div class="article-grid">
+                <!-- Article 1 -->
+                <div class="article-card" data-title="Stress Relief" data-content="Full article content for stress relief goes here...">
+                    <div class="article-image">
+                        <img src="images/placeholder1.jpg" alt="Stress Relief">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title">Natural Stress Relief</h3>
+                        <p class="article-excerpt">Gentle ways to calm anxiety and reduce daily stress with herbs and mindfulness.</p>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="article-card" data-title="Digestive Health" data-content="Full article content for digestive health goes here...">
+                    <div class="article-image">
+                        <img src="images/placeholder2.jpg" alt="Digestive Health">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title">Improve Digestion Naturally</h3>
+                        <p class="article-excerpt">Herbs and foods to soothe bloating and support gut balance.</p>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="article-card" data-title="Better Sleep" data-content="Full article content for better sleep goes here...">
+                    <div class="article-image">
+                        <img src="images/placeholder3.jpg" alt="Better Sleep">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title">Fall Asleep Faster</h3>
+                        <p class="article-excerpt">Herbal rituals and routines for restful nights.</p>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="article-card" data-title="Immune Boost" data-content="Full article content for immune boost goes here...">
+                    <div class="article-image">
+                        <img src="images/placeholder4.jpg" alt="Immune Boost">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title">Strengthen Immunity</h3>
+                        <p class="article-excerpt">Natural foods and herbs to support your body's defenses.</p>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="article-card" data-title="Energy Boost" data-content="Full article content for energy boost goes here...">
+                    <div class="article-image">
+                        <img src="images/placeholder5.jpg" alt="Energy Boost">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title">Combat Fatigue</h3>
+                        <p class="article-excerpt">Sustainable ways to increase daily energy levels.</p>
+                    </div>
+                </div>
+
+                <!-- Article 6 -->
+                <div class="article-card" data-title="Hormonal Balance" data-content="Full article content for hormonal balance goes here...">
+                    <div class="article-image">
+                        <img src="images/placeholder6.jpg" alt="Hormonal Balance">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title">Balance Hormones Naturally</h3>
+                        <p class="article-excerpt">Gentle support for hormonal health and well-being.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Popup for Articles -->
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-body"></div>
         </div>
     </div>
-</footer>
-    <script src="script.js"></script>
+
+    <footer>
+        <div class="footer-bg">
+            <div class="footer-content">
+                <p>© 2025 Health For You • Made with 🌿 and good vibes by NaDari Cole</p>
+                <p>Feel better naturally, one small step at a time. 💛</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Back to Top Button -->
-<button id="back-to-top" aria-label="Back to top">
-    ↑
-</button>
+    <button id="back-to-top" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="script2.js"></script>
 </body>
 </html>
