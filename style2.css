@@ -1,58 +1,51 @@
-/* General reset and font – applies to all elements on the page */
+
+/* conditions.html styles */
+/* General styles for the page */
+@charset "utf-8";
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Nunito", sans-serif;
 }
-
 body {
-    background: hsl(44, 100%, 98%); /* My light beige background for the whole site */
+    background: hsl(44, 100%, 98%); /* Light beige background */
     min-height: 100vh;
     position: relative;
 }
-
-/* Header – my green nav bar at the top */
+/* Header/Navigation – same as home page */
 header.header {
-    background-color: #a2b850; /* My green color */
-    padding: 25px 50px 25px 10px; /* Small left padding so logo is near the edge */
+    background-color: #a2b850; /* green */
+    padding: 25px 50px 25px 10px; /* Reduced left padding for logo near edge */
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
-
-/* Logo – positions my logo on the left */
 .logo {
     display: flex;
     align-items: center;
+    margin-left: 0; /* No extra margin for logo */
 }
-
 .logo img {
-    height: 150px; /* My logo size */
+    height: 150px;
     width: auto;
     display: block;
 }
-
-/* Nav centering – keeps my nav links in the middle */
 .nav-center {
     flex: 1;
     display: flex;
     justify-content: center;
 }
-
-/* Nav links – my menu items */
 .nav-area {
     list-style: none;
     padding: 0;
     display: flex;
     align-items: center;
 }
-
 .nav-area li {
     margin: 0 20px;
 }
-
 .nav-area li a {
     color: #fff;
     text-decoration: none;
@@ -61,20 +54,15 @@ header.header {
     padding: 8px 0;
     transition: color 0.3s;
 }
-
-.nav-area li a:hover,
-.nav-area li a.active {
-    color: #ffac93; /* My orange hover/active color */
-    font-weight: 700;
+.nav-area li a:hover {
+    color: #ffac93;
 }
-
-/* Header search bar – the small one in the nav */
+/* Header search bar */
 .search-bar-container {
     position: relative;
     width: 300px;
     height: 48px;
 }
-
 .search-bar-container .search-icon {
     position: absolute;
     left: 16px;
@@ -85,7 +73,6 @@ header.header {
     pointer-events: none;
     z-index: 1;
 }
-
 .search-input {
     width: 100%;
     height: 100%;
@@ -99,12 +86,10 @@ header.header {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 .search-input:focus {
     border-color: #ffac93;
     box-shadow: 0 6px 20px rgba(255, 172, 147, 0.3);
 }
-
 .search-clear {
     position: absolute;
     right: 12px;
@@ -119,25 +104,21 @@ header.header {
     pointer-events: none;
     transition: all 0.3s ease;
 }
-
 .search-input:not(:placeholder-shown) ~ .search-clear {
     opacity: 1;
     pointer-events: all;
 }
-
 .search-clear:hover {
     color: #ff643b;
     transform: translateY(-50%) rotate(90deg) scale(1.1);
 }
-
-/* Hero Section – my big welcome area */
+/* Hero Section */
 .hero {
     position: relative;
     height: 70vh;
     min-height: 500px;
     overflow: hidden;
 }
-
 .hero-image {
     position: absolute;
     left: 0;
@@ -146,13 +127,11 @@ header.header {
     height: 100%;
     z-index: 1;
 }
-
 .hero-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-fit: cover; /* Ensures hero image fills the area without distortion */
 }
-
 .hero-content {
     position: absolute;
     right: 0;
@@ -169,100 +148,137 @@ header.header {
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
     border-radius: 40px 0 0 40px;
 }
-
-/* Page Search Bar – the big one below hero for searching articles on this page */
-.page-search-section {
-    padding: 50px 0 30px;
+/* Article Search and Filters */
+.article-search-filters {
+    padding: 40px 20px;
     text-align: center;
+    position: relative;
 }
-
-.container {
-    max-width: 900px;
+.search-wrapper {
+    position: relative;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 0 20px;
 }
-
 #article-search-input {
     width: 100%;
-    max-width: 700px;
-    padding: 18px 30px;
+    padding: 18px 50px 18px 30px;
     font-size: 18px;
-    border: 2px solid #ffac93;
+    border: 2px solid transparent;
     border-radius: 50px;
     background-color: #fff;
     outline: none;
-    box-shadow: 0 4px 15px rgba(255, 172, 147, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
-
 #article-search-input:focus {
-    border-color: #ff643b;
-    box-shadow: 0 8px 25px rgba(255, 100, 59, 0.3);
+    border-color: #ffac93;
+    box-shadow: 0 6px 20px rgba(255, 172, 147, 0.3);
 }
-
-/* Articles Grid – 3 per row layout */
+.search-clear-article {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+#article-search-input:not(:placeholder-shown) + .search-clear-article {
+    opacity: 1;
+    pointer-events: all;
+}
+.search-clear-article:hover {
+    color: #ff643b;
+    transform: translateY(-50%) rotate(90deg) scale(1.1);
+}
+.filter-btn {
+    background-color: #a2b850;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+.filter-btn:hover {
+    background-color: #ffac93;
+}
+.filter-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+.filter-menu label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 16px;
+}
+.filter-checkbox {
+    margin-right: 10px;
+}
+/* Articles Grid – 3 per row */
 .articles-section {
     padding: 20px 0 80px;
 }
-
-.article-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
-
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
 .article-card {
     background-color: #fff;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
-
 .article-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
-
 .article-image {
-    height: 220px;
-    overflow: hidden;
+    height: 200px;
 }
-
 .article-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
 }
-
-.article-card:hover .article-image img {
-    transform: scale(1.1);
-}
-
 .article-info {
     padding: 25px;
-    text-align: center;
 }
-
 .article-title {
     font-size: 22px;
-    color: #a2b850;
+    color: #333;
     margin-bottom: 15px;
-    font-weight: 600;
 }
-
 .article-excerpt {
     font-size: 16px;
     color: #666;
     line-height: 1.6;
 }
-
-/* Modal Popup – the resizable article window */
+/* Modal Popup – resizable article window */
 .modal {
     display: none;
     position: fixed;
@@ -277,7 +293,6 @@ header.header {
     justify-content: center;
     animation: fadeIn 0.4s ease;
 }
-
 .modal-content {
     background-color: #fff;
     padding: 40px;
@@ -288,61 +303,48 @@ header.header {
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
-    resize: both; /* Allows me to resize the modal */
+    resize: both; /* Allows resizing like a computer app */
     min-width: 300px;
+    min-height: 200px;
     animation: slideUp 0.5s ease;
 }
-
 .modal-close {
     position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 32px;
-    font-weight: bold;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
     color: #a2b850;
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .modal-close:hover {
     color: #ffac93;
     transform: rotate(90deg) scale(1.2);
 }
-
 #modal-title {
     font-size: 32px;
-    color: #a2b850;
+    color: #333;
     margin-bottom: 20px;
 }
-
 #modal-body {
     font-size: 18px;
     line-height: 1.7;
     color: #444;
 }
-
-/* Animations for modal */
+/* Animations for modal open/close */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
 @keyframes slideUp {
     from { transform: translateY(50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
-
-/* Hidden class for search filtering */
-.article-card.hidden {
-    display: none;
-}
-
-/* Footer – my green footer strip */
+/* Footer – same as home page */
 footer {
     padding: 60px 20px 40px;
     background-color: hsl(44, 100%, 98%);
 }
-
 .footer-bg {
     background-color: #a2b850;
     padding: 40px 20px;
@@ -351,20 +353,17 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .footer-content p {
     color: #fff;
     margin: 10px 0;
     font-size: 16px;
     line-height: 1.6;
 }
-
 .footer-content p:first-child {
     font-weight: 600;
     font-size: 17px;
 }
-
-/* Back to Top Button – my scroll up button */
+/* Back to Top Button */
 #back-to-top {
     position: fixed;
     bottom: 40px;
@@ -386,26 +385,11 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
 #back-to-top:hover {
     background-color: #8fa046;
     transform: translateY(-5px);
 }
-
 #back-to-top.show {
     opacity: 1;
     visibility: visible;
-}
-
-/* Responsive – makes grid 2 or 1 column on smaller screens */
-@media (max-width: 1024px) {
-    .article-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .article-grid {
-        grid-template-columns: 1fr;
-    }
 }
