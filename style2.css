@@ -1,13 +1,4 @@
-/*
-Page layout for conditions.html
-Author: NaDari Cole
-Date: 12/32/2025
-Code Type: css
-Filename: style2.css
-*/
-
-@charset "utf-8";
-
+/* General reset and font – applies to all elements on the page */
 * {
     margin: 0;
     padding: 0;
@@ -16,41 +7,41 @@ Filename: style2.css
 }
 
 body {
-    background: hsl(44, 100%, 98%); /* Light beige background */
+    background: hsl(44, 100%, 98%); /* My light beige background for the whole site */
     min-height: 100vh;
     position: relative;
 }
 
-/* Header/Navigation */
+/* Header – my green nav bar at the top */
 header.header {
-    background-color: #a2b850; /* green */
-    padding: 25px 50px 25px 10px; /* Reduced left padding to 10px – this moves everything left */
+    background-color: #a2b850; /* My green color */
+    padding: 25px 50px 25px 10px; /* Small left padding so logo is near the edge */
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
 
+/* Logo – positions my logo on the left */
 .logo {
     display: flex;
     align-items: center;
-    margin-left: 0; /* No extra margin – logo hugs the left as much as possible */
 }
 
 .logo img {
-    height: 150px; /* Your current size */
+    height: 150px; /* My logo size */
     width: auto;
     display: block;
 }
 
-/* Nav centering wrapper */
+/* Nav centering – keeps my nav links in the middle */
 .nav-center {
-    flex: 1; /* Takes available space to center nav */
+    flex: 1;
     display: flex;
     justify-content: center;
 }
 
-/* Navigation links */
+/* Nav links – my menu items */
 .nav-area {
     list-style: none;
     padding: 0;
@@ -71,11 +62,13 @@ header.header {
     transition: color 0.3s;
 }
 
-.nav-area li a:hover {
-    color: #ffac93; /* light pink/orange hover */
+.nav-area li a:hover,
+.nav-area li a.active {
+    color: #ffac93; /* My orange hover/active color */
+    font-weight: 700;
 }
 
-/* MINIMALIST SEARCH BAR */
+/* Header search bar – the small one in the nav */
 .search-bar-container {
     position: relative;
     width: 300px;
@@ -105,11 +98,6 @@ header.header {
     outline: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.search-input::placeholder {
-    color: #999;
-    font-style: italic;
 }
 
 .search-input:focus {
@@ -142,7 +130,7 @@ header.header {
     transform: translateY(-50%) rotate(90deg) scale(1.1);
 }
 
-/* HERO SECTION */
+/* Hero Section – my big welcome area */
 .hero {
     position: relative;
     height: 70vh;
@@ -162,7 +150,7 @@ header.header {
 .hero-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
 .hero-content {
@@ -172,55 +160,200 @@ header.header {
     transform: translateY(-50%);
     width: 380px;
     height: 420px;
-    background-color: hsl(44, 100%, 98%); /* Matches body beige */
+    background-color: hsl(44, 100%, 98%);
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 2;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
-    border-radius: 40px 0 0 40px; /* Rounded on the left side */
+    border-radius: 40px 0 0 40px;
 }
 
-.hero-content h1 {
-    font-size: 36px;
-    color: #333;
+/* Page Search Bar – the big one below hero for searching articles on this page */
+.page-search-section {
+    padding: 50px 0 30px;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#article-search-input {
+    width: 100%;
+    max-width: 700px;
+    padding: 18px 30px;
+    font-size: 18px;
+    border: 2px solid #ffac93;
+    border-radius: 50px;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(255, 172, 147, 0.2);
+    transition: all 0.3s ease;
+}
+
+#article-search-input:focus {
+    border-color: #ff643b;
+    box-shadow: 0 8px 25px rgba(255, 100, 59, 0.3);
+}
+
+/* Articles Grid – 3 per row layout */
+.articles-section {
+    padding: 20px 0 80px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.article-card {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.article-image {
+    height: 220px;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.1);
+}
+
+.article-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.article-title {
+    font-size: 22px;
+    color: #a2b850;
     margin-bottom: 15px;
-    line-height: 1.2;
+    font-weight: 600;
 }
 
-.hero-content h1 span {
-    font-size: 30px;
-    font-weight: normal;
-    display: block;
-    color: #555;
-}
-
-.hero-content p {
-    font-size: 17px;
+.article-excerpt {
+    font-size: 16px;
     color: #666;
-    margin-bottom: 30px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* Footer */
+/* Modal Popup – the resizable article window */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    resize: both; /* Allows me to resize the modal */
+    min-width: 300px;
+    animation: slideUp 0.5s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #a2b850;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #ffac93;
+    transform: rotate(90deg) scale(1.2);
+}
+
+#modal-title {
+    font-size: 32px;
+    color: #a2b850;
+    margin-bottom: 20px;
+}
+
+#modal-body {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* Animations for modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Hidden class for search filtering */
+.article-card.hidden {
+    display: none;
+}
+
+/* Footer – my green footer strip */
 footer {
-    padding: 60px 20px 40px; /* Space above and below the green strip */
-    background-color: hsl(44, 100%, 98%); /* Keeps body beige outside the strip */
+    padding: 60px 20px 40px;
+    background-color: hsl(44, 100%, 98%);
 }
 
 .footer-bg {
-    background-color: #a2b850; /* green */
+    background-color: #a2b850;
     padding: 40px 20px;
     text-align: center;
-    border-radius: 20px 20px 0 0; /* rounded top corners for softness */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 20px 0 0;
     max-width: 1200px;
-    margin: 0 auto; /* Centers the strip if screen is wide */
+    margin: 0 auto;
 }
 
 .footer-content p {
-    color: #fff; /* White text on green */
+    color: #fff;
     margin: 10px 0;
     font-size: 16px;
     line-height: 1.6;
@@ -231,24 +364,24 @@ footer {
     font-size: 17px;
 }
 
-/* Back to Top Button */
+/* Back to Top Button – my scroll up button */
 #back-to-top {
     position: fixed;
-    bottom: 40px;              /* Distance from bottom */
-    right: 40px;               /* Distance from right side */
-    background-color: #a2b850; /* Green */
+    bottom: 40px;
+    right: 40px;
+    background-color: #a2b850;
     color: #fff;
     border: none;
-    border-radius: 50%;        /* Perfect circle */
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     font-size: 28px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    opacity: 0;                /* Hidden by default */
+    opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
-    z-index: 1000;             /* Always on top */
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -257,10 +390,22 @@ footer {
 #back-to-top:hover {
     background-color: #8fa046;
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 #back-to-top.show {
     opacity: 1;
     visibility: visible;
+}
+
+/* Responsive – makes grid 2 or 1 column on smaller screens */
+@media (max-width: 1024px) {
+    .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
 }
