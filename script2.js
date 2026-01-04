@@ -7,31 +7,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     
     // ============================================
-    // NAVIGATION SEARCH BAR FUNCTIONALITY
-    // ============================================
-    
-    // Get navigation search elements
-    const searchInput = document.querySelector('.search-input');
-    const searchClear = document.querySelector('.search-clear');
-    
-    // Clear button functionality for navigation search
-    if (searchClear && searchInput) {
-        searchClear.addEventListener('click', function () {
-            searchInput.value = '';
-            searchInput.focus();
-            searchInput.dispatchEvent(new Event('input'));
-        });
-        
-        // Clear on Escape key
-        searchInput.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                searchInput.value = '';
-                searchInput.blur();
-            }
-        });
-    }
-    
-    // ============================================
     // ARTICLE SEARCH BAR FUNCTIONALITY
     // ============================================
     
@@ -143,32 +118,36 @@ document.addEventListener('DOMContentLoaded', function () {
     // ============================================
     
     function playFrutigerChime() {
-        // Create audio context (the audio engine)
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        
-        // Create oscillator (sound wave generator)
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        
-        // Connect oscillator to volume control to speakers
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        // Set sound frequency (pitch) - bright, airy tone
-        oscillator.frequency.setValueAtTime(800, audioContext.currentTime); // Start at 800Hz
-        oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.1); // Rise to 1200Hz
-        
-        // Set volume envelope (fade in and out quickly)
-        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-        gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.05); // Fade in
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3); // Fade out
-        
-        // Use sine wave for smooth, pleasant tone
-        oscillator.type = 'sine';
-        
-        // Play the sound
-        oscillator.start(audioContext.currentTime);
-        oscillator.stop(audioContext.currentTime + 0.3); // Stop after 0.3 seconds
+        try {
+            // Create audio context (the audio engine)
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Create oscillator (sound wave generator)
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            // Connect oscillator to volume control to speakers
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            // Set sound frequency (pitch) - bright, airy tone
+            oscillator.frequency.setValueAtTime(800, audioContext.currentTime); // Start at 800Hz
+            oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.1); // Rise to 1200Hz
+            
+            // Set volume envelope (fade in and out quickly)
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.05); // Fade in
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3); // Fade out
+            
+            // Use sine wave for smooth, pleasant tone
+            oscillator.type = 'sine';
+            
+            // Play the sound
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.3); // Stop after 0.3 seconds
+        } catch (error) {
+            console.log('Audio not available:', error);
+        }
     }
     
     // ============================================
@@ -216,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Close popup when Escape key is pressed
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && popup.classList.contains('active')) {
+        if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
             closePopup();
         }
     });
@@ -322,30 +301,5 @@ document.addEventListener('DOMContentLoaded', function () {
             currentHandle = null;
         }
     });
-    
-    // ============================================
-    // BACK TO TOP BUTTON FUNCTIONALITY
-    // ============================================
-    
-    const backToTopButton = document.getElementById('back-to-top');
-    
-    // Show button when user scrolls down 300px
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-    
-    // Smooth scroll to top when button is clicked
-    if (backToTopButton) {
-        backToTopButton.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
     
 });
